@@ -78,6 +78,7 @@
                     <th class="p-4 cursor-pointer" onclick="sortTable(3)">Usia</th>
                     <th class="p-4 cursor-pointer" onclick="sortTable(4)">Alamat</th>
                     <th class="p-4 cursor-pointer" onclick="sortTable(5)">Telepon</th>
+                    <th class="p-4 cursor-pointer" onclick="sortTable(5)">Bangun</th>
                     <th class="p-4 cursor-pointer" onclick="sortTable(6)">Hasil</th>
                 </tr>
             </thead>
@@ -96,6 +97,7 @@
                         <td class="p-4">{{ $calculation->age }}</td>
                         <td class="p-4">{{ $calculation->address }}</td>
                         <td class="p-4">{{ $calculation->phone }}</td>
+                        <td class="p-4">{{ $calculation->shape }}</td>
                         <td class="p-4">{{ $calculation->result }}</td>
                     </tr>
                 @endforeach

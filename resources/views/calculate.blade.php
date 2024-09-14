@@ -38,9 +38,9 @@
             <div class="mb-4">
                 <select id="flatShape" name="flatShape" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Pilih Bangun Datar</option>
-                    <option value="square">Persegi</option>
-                    <option value="triangle">Segitiga</option>
-                    <option value="circle">Lingkaran</option>
+                    <option value="persegi">Persegi</option>
+                    <option value="segitiga">Segitiga</option>
+                    <option value="lingkaran">Lingkaran</option>
                 </select>
             </div>
             <div id="flatDimensions" class="mb-4">
@@ -50,9 +50,9 @@
             <div class="mb-4">
                 <select id="solidShape" name="solidShape" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                     <option value="">Pilih Bangun Ruang</option>
-                    <option value="cube">Kubus</option>
-                    <option value="pyramid">Limas</option>
-                    <option value="cylinder">Tabung</option>
+                    <option value="kubus">Kubus</option>
+                    <option value="limas">Limas</option>
+                    <option value="tabung">Tabung</option>
                 </select>
             </div>
             <div id="solidDimensions" class="mb-4">
@@ -71,19 +71,19 @@
                 flatDimensionsDiv.innerHTML = ''; // Menghapus konten sebelumnya
                 var inputHTML = ''; // Menyimpan HTML input yang akan ditambahkan
                 // Menentukan jenis input yang dibutuhkan berdasarkan bangun datar yang dipilih
-                if (shape === 'square') {
+                if (shape === 'persegi') {
                     inputHTML = `
                         <label for="side" class="block text-sm font-medium text-gray-700">Panjang Sisi (Persegi):</label>
                         <input type="number" id="side" name="flatDimensions[side]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'triangle') {
+                } else if (shape === 'segitiga') {
                     inputHTML = `
                         <label for="base" class="block text-sm font-medium text-gray-700">Panjang Alas (Segitiga):</label>
                         <input type="number" id="base" name="flatDimensions[base]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                         <label for="height" class="block text-sm font-medium text-gray-700">Tinggi (Segitiga):</label>
                         <input type="number" id="height" name="flatDimensions[height]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'circle') {
+                } else if (shape === 'lingkaran') {
                     inputHTML = `
                         <label for="radius" class="block text-sm font-medium text-gray-700">Jari-Jari (Lingkaran):</label>
                         <input type="number" id="radius" name="flatDimensions[radius]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
@@ -99,19 +99,19 @@
                 solidDimensionsDiv.innerHTML = ''; // Menghapus konten sebelumnya
                 var inputHTML = ''; // Menyimpan HTML input yang akan ditambahkan
                 // Menentukan jenis input yang dibutuhkan berdasarkan bangun ruang yang dipilih
-                if (shape === 'cube') {
+                if (shape === 'kubus') {
                     inputHTML = `
                         <label for="side" class="block text-sm font-medium text-gray-700">Panjang Sisi (Kubus):</label>
                         <input type="number" id="side" name="solidDimensions[side]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'pyramid') {
+                } else if (shape === 'limas') {
                     inputHTML = `
                         <label for="base_area" class="block text-sm font-medium text-gray-700">Luas Alas (Limas):</label>
                         <input type="number" id="base_area" name="solidDimensions[base_area]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                         <label for="height" class="block text-sm font-medium text-gray-700">Tinggi (Limas):</label>
                         <input type="number" id="height" name="solidDimensions[height]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'cylinder') {
+                } else if (shape === 'tabung') {
                     inputHTML = `
                         <label for="radius" class="block text-sm font-medium text-gray-700">Jari-Jari (Tabung):</label>
                         <input type="number" id="radius" name="solidDimensions[radius]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
@@ -130,19 +130,19 @@
                 var flatDimensionsDiv = document.getElementById('flatDimensions');
                 flatDimensionsDiv.innerHTML = '';
                 var inputHTML = '';
-                if (shape === 'square') {
+                if (shape === 'persegi') {
                     inputHTML = `
                         <label for="side" class="block text-sm font-medium text-gray-700">Panjang Sisi (Persegi):</label>
                         <input type="number" id="side" name="flatDimensions[side]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'triangle') {
+                } else if (shape === 'segitiga') {
                     inputHTML = `
                         <label for="base" class="block text-sm font-medium text-gray-700">Panjang Alas (Segitiga):</label>
                         <input type="number" id="base" name="flatDimensions[base]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                         <label for="height" class="block text-sm font-medium text-gray-700">Tinggi (Segitiga):</label>
                         <input type="number" id="height" name="flatDimensions[height]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'circle') {
+                } else if (shape === 'lingkaran') {
                     inputHTML = `
                         <label for="radius" class="block text-sm font-medium text-gray-700">Jari-Jari (Lingkaran):</label>
                         <input type="number" id="radius" name="flatDimensions[radius]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
@@ -156,19 +156,19 @@
                 var solidDimensionsDiv = document.getElementById('solidDimensions');
                 solidDimensionsDiv.innerHTML = '';
                 var inputHTML = '';
-                if (shape === 'cube') {
+                if (shape === 'kubus') {
                     inputHTML = `
                         <label for="side" class="block text-sm font-medium text-gray-700">Panjang Sisi (Kubus):</label>
                         <input type="number" id="side" name="solidDimensions[side]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'pyramid') {
+                } else if (shape === 'limas') {
                     inputHTML = `
                         <label for="base_area" class="block text-sm font-medium text-gray-700">Luas Alas (Limas):</label>
                         <input type="number" id="base_area" name="solidDimensions[base_area]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                         <label for="height" class="block text-sm font-medium text-gray-700">Tinggi (Limas):</label>
                         <input type="number" id="height" name="solidDimensions[height]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                     `;
-                } else if (shape === 'cylinder') {
+                } else if (shape === 'tabung') {
                     inputHTML = `
                         <label for="radius" class="block text-sm font-medium text-gray-700">Jari-Jari (Tabung):</label>
                         <input type="number" id="radius" name="solidDimensions[radius]" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>

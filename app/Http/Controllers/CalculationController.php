@@ -70,34 +70,34 @@ class CalculationController extends Controller
     private function calculateResult($shape, $dimensions)
     {
         switch ($shape) {
-            case 'square':
+            case 'persegi':
                 $side = $dimensions['side'];
                 $area = $side * $side;
                 return "Luas: $area";
 
-            case 'triangle':
+            case 'segitiga':
                 $base = $dimensions['base'];
                 $height = $dimensions['height'];
                 $area = 0.5 * $base * $height;
                 return "Luas: $area";
 
-            case 'circle':
+            case 'lingkaran':
                 $radius = $dimensions['radius'];
                 $area = pi() * $radius * $radius;
                 return "Luas: $area";
 
-            case 'cube':
+            case 'kubus':
                 $side = $dimensions['side'];
                 $volume = $side * $side * $side;
                 return "Volume: $volume";
 
-            case 'pyramid':
+            case 'limas':
                 $baseArea = $dimensions['base_area'];
                 $height = $dimensions['height'];
                 $volume = (1/3) * $baseArea * $height;
                 return "Volume: $volume";
 
-            case 'cylinder':
+            case 'tabung':
                 $radius = $dimensions['radius'];
                 $height = $dimensions['height'];
                 $volume = pi() * $radius * $radius * $height;
@@ -133,8 +133,8 @@ class CalculationController extends Controller
         $totalCalculations = $calculations->count();
 
         // Mengelompokkan berdasarkan jenis bangun (datar atau ruang)
-        $flatShapes = ['square', 'triangle', 'circle']; // Bangun datar
-        $solidShapes = ['cube', 'pyramid', 'cylinder']; // Bangun ruang
+        $flatShapes = ['persegi', 'segitiga', 'lingkaran']; // Bangun datar
+        $solidShapes = ['kubus', 'limas', 'tabung']; // Bangun ruang
 
         // Mengelompokkan dan menghitung jumlah masing-masing bentuk
         $shapeCounts = $calculations->groupBy('shape')->map->count();

@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-indigo-200">
-<div class="container mx-auto my-8 px-4">
+    <div class="container mx-auto my-8 px-4">
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h2 class="text-3xl font-extrabold text-center text-gray-800 mb-10">Statistik Perhitungan</h2>
             <div class="mb-6 text-center">
@@ -22,10 +22,12 @@
                 <p class="text-xl text-gray-600">{{ $solidPercentage }}%</p>
             </div>
             <div class="mb-6 text-center">
-                <h3 class="text-xl font-semibold text-gray-800">Detail Persentase Masing-Masing Bentuk</h3>
+                <h3 class="text-xl font-semibold text-gray-800">Detail Perhitungan Masing-Masing Bentuk</h3>
                 <ul class="list-disc list-inside text-gray-600 inline-block text-left">
-                    @foreach ($shapePercentages as $shape => $percentage)
-                        <li class="text-lg">{{ ucfirst($shape) }}: {{ number_format($percentage, 2) }}%</li>
+                    @foreach ($shapeCounts as $shape => $count)
+                        <li class="text-lg">
+                            {{ ucfirst($shape) }}: {{ $count }} kali dihitung ({{ number_format($shapePercentages[$shape], 2) }}%)
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -37,4 +39,5 @@
         </div>
     </div>
 </body>
+
 </html>
